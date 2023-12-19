@@ -4,6 +4,9 @@ const container = document.querySelector(".container");
 
 let pixelCount = 10;
 
+const blue = document.querySelector("#btn-blue");
+const red = document.querySelector("#btn-red");
+
 const etchASketch = function () {
   const pixelSize = container.clientWidth / pixelCount;
 
@@ -28,7 +31,23 @@ const etchASketch = function () {
 
     element.style.border = "1px solid black";
     element.addEventListener("mouseover", () => {
-      element.style.backgroundColor = "blue";
+      element.style.backgroundColor = "black";
+    });
+  });
+
+  blue.addEventListener("click", () => {
+    pixels.forEach((element) => {
+      element.addEventListener("mouseover", () => {
+        element.style.backgroundColor = "blue";
+      });
+    });
+  });
+
+  red.addEventListener("click", () => {
+    pixels.forEach((element) => {
+      element.addEventListener("mouseover", () => {
+        element.style.backgroundColor = "red";
+      });
     });
   });
 };
@@ -42,4 +61,10 @@ btn.addEventListener("click", () => {
 
   container.innerHTML = "";
   etchASketch();
+});
+
+const rick = document.querySelector("#rick");
+
+rick.addEventListener("click", () => {
+  window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
 });
